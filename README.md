@@ -1,6 +1,9 @@
 
 
-# Java-Backend-Architecture ☕
+# Java Backend Architecture ☕
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="150" height="150"/>
+</p>
 
 Repositório focado no aprendizado prático de Java, contendo exercícios de lógica, programas de aprendizado e ferramentas utilitárias para desenvolvimento backend.
 
