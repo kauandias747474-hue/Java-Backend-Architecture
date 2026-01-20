@@ -8,25 +8,25 @@ Este ecossistema técnico é dedicado ao desenvolvimento de soluções backend d
 </p>
 ---
 
-#### #### 🛠️ Ecossistema de Desenvolvimento
+ #### 🛠️ Ecossistema de Desenvolvimento
 
-#### #### 🧠 Engenharia de Algoritmos & Complexidade
+#### 🧠 Engenharia de Algoritmos & Complexidade
 Implementação de lógica computacional de alta fidelidade. Foco em otimização de tempo de execução e análise de complexidade ($O(n)$). Cada algoritmo é projetado para lidar com fluxos de dados reais, garantindo escalabilidade desde a base.
 > **Desafios de Implementação:** Motores de busca, algoritmos de ordenação customizados e simuladores de probabilidade.
 
-#### #### 💼 Business Intelligence & Automação Financeira
+ #### 💼 Business Intelligence & Automação Financeira
 Desenvolvimento de motores de regra de negócio (Business Rules) voltados para autonomia financeira:
 * **Tax Engine:** Calculadoras de tributação complexa para prestação de serviços internacionais.
 * **Profit Simulator:** Algoritmos de projeção de lucro líquido baseados em variáveis de custo operacional.
 * **Dynamic Budgeting:** Geradores automáticos de orçamentos dinâmicos para contratos independentes.
 
-#### #### 🏗️ Core Backend & Design de Objetos
+ #### 🏗️ Core Backend & Design de Objetos
 Aplicação rigorosa de **Clean Code** e **SOLID**. Uso avançado de herança, polimorfismo e interfaces para criar estruturas de software desacopladas e resilientes a mudanças.
 > **Foco:** Criação de APIs internas e sistemas de gerenciamento de entidades complexas.
 
 ---
 
-#### #### 🚀 Trilhas de Especialização Técnica
+ #### 🚀 Trilhas de Especialização Técnica
 
 * **Low-Level Syntax & Memory:** Gestão eficiente de memória através do uso estratégico de tipos primitivos e wrappers.
 * **Advanced Flow Control:** Implementação de lógicas de decisão não-lineares para processos de negócio multifacetados.
@@ -35,7 +35,7 @@ Aplicação rigorosa de **Clean Code** e **SOLID**. Uso avançado de herança, p
 
 ---
 
-#### #### 🎯 Roadmap de Projetos Inovadores (Para Implementar)
+ #### 🎯 Roadmap de Projetos Inovadores (Para Implementar)
 
 Para fugir do óbvio, este repositório seguirá o cronograma de construção das seguintes soluções:
 
@@ -45,10 +45,9 @@ Para fugir do óbvio, este repositório seguirá o cronograma de construção da
 
 ---
 
-#### #### 📐 Diferenciais Estratégicos
-
-#### #### Primazia da Lógica Estruturada
+ ####  📐 Diferenciais Estratégicos
+ #### Primazia da Lógica Estruturada
 A implementação é o passo final. O valor real reside no design da solução, onde fundamentos de lógica e matemática validam a viabilidade do software antes de qualquer linha de código.
 
-#### #### Modularidade para Freelance
+ #### Modularidade para Freelance
 Cada componente é desenvolvido como um módulo independente (Plug-and-Play), permitindo que peças deste repositório sejam integradas instantaneamente em projetos comerciais de terceiros.
