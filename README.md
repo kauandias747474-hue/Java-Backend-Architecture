@@ -1,57 +1,58 @@
+# Java Backend Architecture ☕
 
-# ☕ Java Backend Architecture
-
-#### Arquitetura de Sistemas Escaláveis e Engenharia de Software
-Este ecossistema técnico é dedicado ao desenvolvimento de soluções backend de alta performance em Java. O foco central é a transição entre a **modelagem lógica abstrata** e a **implementação de sistemas robustos**, priorizando eficiência algorítmica e modularidade para o mercado **Freelance**.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="150" height="150"/>
+  <img src="https://img.shields.io/badge/Focus-High--Performance%20Backend-red?style=for-the-badge" alt="Focus">
+  <img src="https://img.shields.io/badge/Language-Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Architecture-Clean%20Code%20|%20SOLID-orange?style=for-the-badge" alt="Architecture">
 </p>
---- 
-Este ecossistema técnico é dedicado ao desenvolvimento de soluções backend de alta performance em Java. O foco central é a convergência entre a **modelagem lógica abstrata** e a **implementação de sistemas robustos**, priorizando eficiência algorítmica e modularidade para o mercado **Freelance**.
 
 ---
 
-#### 🛠️ Ecossistema de Desenvolvimento
+### 🌐 Enterprise Solutions & Engineering
+<p align="left">
+  <img src="https://img.shields.io/badge/Languages-🇺🇸%20EN%20|%20🇩🇪%20DE%20|%20🇪🇸%20ES-white?style=flat-square" alt="Languages">
+</p>
 
-#### 🧠 Engenharia de Algoritmos & Complexidade
-Foco na resolução de problemas de alta fidelidade computacional e análise de complexidade ($O(n)$). O diferencial aqui é a **Primazia da Lógica**: cada solução é validada matematicamente antes da implementação, garantindo performance e escalabilidade.
-> **Domínios:** Motores de busca, algoritmos de ordenação customizados e simuladores de probabilidade.
+**EN:** This technical ecosystem is dedicated to developing high-performance Java backend solutions. The focus is on the transition between **abstract logical modeling** and **robust system implementation**, prioritizing algorithmic efficiency and modularity for the international freelance market.
 
-#### 💼 Business Intelligence & Automação Financeira
-Desenvolvimento de motores de regra de negócio (Business Rules) voltados para autonomia comercial:
-* **Tax Engine:** Calculadoras de tributação complexa para serviços internacionais.
-* **Profit Simulator:** Algoritmos de projeção de lucro líquido baseados em variáveis operacionais.
-* **Dynamic Budgeting:** Geradores automáticos de orçamentos dinâmicos.
-
-#### 🏗️ Core Backend & Design de Objetos
-Aplicação rigorosa de **Clean Code** e **SOLID**. Uso avançado de Herança, Interfaces e Polimorfismo para criar estruturas desacopladas e resilientes.
+**PT:** Este ecossistema técnico é dedicado ao desenvolvimento de soluções backend de alta performance em Java. O foco central é a transição entre a **modelagem lógica abstrata** e a **implementação de sistemas robustos**, priorizando eficiência algorítmica e modularidade para o mercado freelance internacional.
 
 ---
 
-#### 🚀 Especialização Técnica & Hard Skills
+## 🏗️ Core Engineering Pillars | Pilares de Engenharia
 
-* **Sintaxe & Memória:** Gestão eficiente de memória com uso estratégico de tipos primitivos.
-* **Controle de Fluxo Avançado:** Lógicas de decisão não-lineares para processos complexos.
-* **Abstração de Domínio:** Modelagem de ativos e contratos em estruturas de classes coesas.
-* **Resiliência de Dados:** Tratamento de exceções e fluxos de I/O de nível industrial.
+### 🧠 Algorithmic Complexity ($O(n)$)
+- **EN:** Mathematical validation of every solution before implementation to ensure scalability.
+- **PT:** Validação matemática de cada solução antes da implementação para garantir escalabilidade.
+
+### 💼 Business Intelligence & Automation
+- **EN:** Development of business rule engines for financial and operational autonomy.
+- **PT:** Desenvolvimento de motores de regras de negócio para autonomia financeira e operacional.
+
+### 🧱 Robust Object Design
+- **EN:** Strict application of **SOLID** and **Clean Code** to create resilient, decoupled structures.
+- **PT:** Aplicação rigorosa de **SOLID** e **Clean Code** para criar estruturas desacopladas e resilientes.
 
 ---
 
-#### 🎯 Roadmap de Projetos Inovadores
+## 📂 Project Roadmap | Roteiro de Projetos
 
-1. **Engine de Conversão Arbitrária:** Sistema de alta precisão para taxas de câmbio e impostos internacionais.
-2. **Audit Log System:** Utilitário para monitoramento e auditoria profissional de eventos.
-3. **Task Scheduler:** Algoritmo de priorização de tarefas baseado em prazos e complexidade.
+| Project / Component | Technical Goal (EN) | Objetivo Técnico (PT) |
+| :--- | :--- | :--- |
+| **Arbitrary Conversion Engine** | High-precision international tax & currency system | Sistema de alta precisão para taxas e câmbio |
+| **Audit Log System** | Professional event monitoring and auditing | Monitoramento e auditoria profissional |
+| **Task Scheduler** | Priority algorithms based on complexity and deadlines | Algoritmos de priorização baseados em prazos |
 
 ---
 
-#### 📐 Diferenciais Estratégicos
+## 🛠️ Tech Stack & Hard Skills
 
-#### 📏 Design-First (Modelagem Matemática)
-A implementação é o passo final. O valor real reside no design da solução e na validação lógica prévia à codificação.
+* **Language:** Java (LTS Versions).
+* **Focus:** Memory Management, Flow Control, Domain Abstraction.
+* **Standards:** Design-First Approach, Plug-and-Play Modularity.
+* **Environment:** Tested and audited for security patterns.
 
-#### 🚀 Modularidade Plug-and-Play
-Componentes independentes projetados para integração instantânea em projetos comerciais reais.
-
-#### 📝 Excelência Técnica desde o Zero
-Rigor técnico, nomenclatura semântica e organização profissional de pacotes desde o primeiro commit.
+---
+<p align="center">
+  <i>"The implementation is the final step; the real value lies in the design."</i>
+</p>
