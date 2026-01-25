@@ -53,8 +53,8 @@
 * **Environment:** Tested and audited for security patterns.
 
 ---
----
----
+
+
 ## 👨‍💻 Author & Engineering Mindset | Autoria e Engenharia
 **Kauan Oliveira** - *Systems & Security Engineer*
 
