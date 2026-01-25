@@ -74,5 +74,7 @@ Atualmente focado em **Freelance de Alta Performance** e **Pesquisa em Bug Bount
 - **Bug Bounty Portfolio:** [HackerOne/Profile]
 - **Professional Email:** [Seu Email]
 
+ ---
+
 *Developed in 2026 by Kauan Oliveira / Feito em 2026 por Kauan Oliveira*
----
+
