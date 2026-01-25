@@ -54,18 +54,17 @@
 
 ---
 ---
+---
 ## 👨‍💻 Author & Engineering Mindset | Autoria e Engenharia
 **Kauan Oliveira** - *Systems & Security Engineer*
 
-![SQL](https://img.shields.io/badge/SQL-Hardening-00758F?style=for-the-badge&logo=mysql&logoColor=white)
-![Java](https://img.shields.io/badge/Java-Enterprise-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-Security-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Java Enterprise](https://img.shields.io/badge/Java-Enterprise-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![SOLID Design](https://img.shields.io/badge/SOLID-Design-316192?style=for-the-badge)
+![Clean Architecture](https://img.shields.io/badge/Clean-Architecture-red?style=for-the-badge)
 
-**PT-BR:**
-Este projeto foi desenvolvido sob uma metodologia de **Rigor Zero-Error**. Antes da codificação, a arquitetura lógica e os fluxos de dados foram validados em papel (Folhas A4 de Engenharia). A implementação é o resultado direto de um modelo matemático estável, focando em integridade de dados e mitigação de vulnerabilidades no nível do motor do sistema.
+**PT-BR:** Modelagem baseada em padrões estruturais para sistemas de missão crítica. Toda a lógica de desacoplamento e gestão de threads foi validada em folhas A4, garantindo que o código final siga rigorosamente os princípios de escalabilidade e segurança de tipos nativos da JVM.
 
-**EN-US:**
-This project was developed under a **Zero-Error Rigor** methodology. Before any coding, the logical architecture and data flows were validated on paper (A4 Engineering Sheets). The implementation is the direct result of a stable mathematical model, focusing on data integrity and vulnerability mitigation at the system engine level.
+**EN-US:** Modeling based on structural patterns for mission-critical systems. All decoupling logic and thread management were validated on A4 sheets, ensuring that the final code strictly follows the principles of scalability and native JVM type safety.
 
 ### 🎯 Objective
 Atualmente focado em **Freelance de Alta Performance** e **Pesquisa em Bug Bounty**. 
@@ -74,4 +73,6 @@ Atualmente focado em **Freelance de Alta Performance** e **Pesquisa em Bug Bount
 - **LinkedIn:** [Kauan Oliveira](https://www.linkedin.com/in/kauan-oliveira-324264378/)
 - **Bug Bounty Portfolio:** [HackerOne/Profile]
 - **Professional Email:** [Seu Email]
-- **Specialty:** Backend Security, SQL Hardening, Data Integrity.
+
+**Developed in 2026 by Kauan Oliveira / Feito em 2026 por Kauan Oliveira**
+---
