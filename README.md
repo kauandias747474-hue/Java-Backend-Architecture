@@ -33,6 +33,10 @@
 - **EN:** Strict application of **SOLID** and **Clean Code** to create resilient, decoupled structures.
 - **PT:** Aplicação rigorosa de **SOLID** e **Clean Code** para criar estruturas desacopladas e resilientes.
 
+### ☁️ Distributed Infrastructure
+- **EN:** Orchestration of microservices using Docker and Kubernetes for high availability.
+- **PT:** Orquestração de microsserviços utilizando Docker e Kubernetes para alta disponibilidade.
+
 ---
 
 ## 📂 Project Roadmap | Roteiro de Projetos
@@ -42,12 +46,16 @@
 | **Arbitrary Conversion Engine** | High-precision international tax & currency system | Sistema de alta precisão para taxas e câmbio |
 | **Audit Log System** | Professional event monitoring and auditing | Monitoramento e auditoria profissional |
 | **Task Scheduler** | Priority algorithms based on complexity and deadlines | Algoritmos de priorização baseados em prazos |
+| **API Edge Gateway** | Centralized routing and distributed security | Roteamento centralizado e segurança distribuída |
+| **K8s Cluster Config** | Self-healing and automated scalability setup | Setup de self-healing e escalabilidade automática |
 
 ---
 
 ## 🛠️ Tech Stack & Hard Skills
 
 * **Language:** Java (LTS Versions).
+* **Frameworks:** Spring Cloud (Gateway, Service Discovery, Config Server).
+* **Infrastructure:** Docker (Containerization) & Kubernetes (Orchestration).
 * **Focus:** Memory Management, Flow Control, Domain Abstraction.
 * **Standards:** Design-First Approach, Plug-and-Play Modularity.
 * **Environment:** Tested and audited for security patterns.
@@ -77,4 +85,3 @@ Atualmente focado em **Freelance de Alta Performance** e **Pesquisa em Bug Bount
  ---
 
 *Developed in 2026 by Kauan Oliveira / Feito em 2026 por Kauan Oliveira*
-
