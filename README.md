@@ -58,20 +58,18 @@ Este projeto conta com motores internos especializados para lidar com lógica de
 * **Caching:** Redis 7.
 * **Messaging:** RabbitMQ.
 
-**To spin up the infrastructure / Para subir a infraestrutura:**
-```bash
-cd infrastructure/docker
-docker-compose up -d
+
+
 ## 📂 Project Roadmap | Roteiro de Projetos
 
-| Project / Component | Technical Goal (EN) | Objetivo Técnico (PT) | Status |
-| :--- | :--- | :--- | :--- |
-| **Finance Engine** | High-precision tax & currency system | Sistema de alta precisão para taxas e câmbio | 🟢 **Ready** |
-| **Infrastructure** | Docker-compose for DB, Cache & Broker | Docker-compose para DB, Cache e Broker | ✅ **Ready** |
-| **Task Orchestration** | Background processing & scheduled jobs | Processamento background e tarefas agendadas | 🟡 **WIP** |
-| **API Edge Gateway** | Centralized routing and security | Roteamento centralizado e segurança | 📅 **Plan** |
-| **Audit Log System** | Event monitoring and auditing | Monitoramento e auditoria profissional | 📅 **Plan** |
-| **K8s Cluster Config** | Self-healing and automated scalability | Setup de self-healing e auto-escalabilidade | 📅 **Plan** |
+| Project / Component | Technical Goal (EN) | Objetivo Técnico (PT) | Status 
+| :--- | :--- | :--- | :---
+| **Finance Engine** | High-precision tax & currency system | Sistema de alta precisão para taxas e câmbio |
+| **Infrastructure** | Docker-compose for DB, Cache & Broker | Docker-compose para DB, Cache e Broker | 
+| **Task Orchestration** | Background processing & scheduled jobs | Processamento background e tarefas agendadas| 
+| **API Edge Gateway** | Centralized routing and security | Roteamento centralizado e segurança | 
+| **Audit Log System** | Event monitoring and auditing | Monitoramento e auditoria profissional | 
+| **K8s Cluster Config** | Self-healing and automated scalability | Setup de self-healing e auto-escalabilidade | 
 
 ---
 
