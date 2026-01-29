@@ -80,7 +80,7 @@ Atualmente focado em **Freelance de Alta Performance** e **Pesquisa em Bug Bount
 
 ### 📩 Connect with Me
 - **LinkedIn:** [Kauan Oliveira](https://www.linkedin.com/in/kauan-oliveira-324264378/)
-- **Professional Email:** [Seu Email]
+- **Professional Email:** 
 
 ---
 
