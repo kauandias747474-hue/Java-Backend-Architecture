@@ -25,13 +25,13 @@
 - **EN:** Mathematical validation of every solution before implementation to ensure scalability.
 - **PT:** Validação matemática de cada solução antes da implementação para garantir escalabilidade.
 
-### 💼 Business Intelligence & Automation
-- **EN:** Development of business rule engines for financial and operational autonomy.
-- **PT:** Desenvolvimento de motores de regras de negócio para autonomia financeira e operacional.
+### 💼 Message-Driven Architecture
+- **EN:** Implementation of asynchronous communication with **RabbitMQ** for high resilience.
+- **PT:** Implementação de comunicação assíncrona com **RabbitMQ** para alta resiliência.
 
-### 🧱 Robust Object Design
-- **EN:** Strict application of **SOLID** and **Clean Code** to create resilient, decoupled structures.
-- **PT:** Aplicação rigorosa de **SOLID** e **Clean Code** para criar estruturas desacopladas e resilientes.
+### 🧱 Robust Object Design & Cache
+- **EN:** Application of **SOLID**, **Clean Code**, and **Redis** for low-latency performance.
+- **PT:** Aplicação de **SOLID**, **Clean Code** e **Redis** para performance de baixa latência.
 
 ### ☁️ Distributed Infrastructure
 - **EN:** Orchestration of microservices using Docker and Kubernetes for high availability.
@@ -43,10 +43,11 @@
 
 | Project / Component | Technical Goal (EN) | Objetivo Técnico (PT) |
 | :--- | :--- | :--- |
-| **Arbitrary Conversion Engine** | High-precision international tax & currency system | Sistema de alta precisão para taxas e câmbio |
-| **Audit Log System** | Professional event monitoring and auditing | Monitoramento e auditoria profissional |
-| **Task Scheduler** | Priority algorithms based on complexity and deadlines | Algoritmos de priorização baseados em prazos |
 | **API Edge Gateway** | Centralized routing and distributed security | Roteamento centralizado e segurança distribuída |
+| **Audit Log System** | Professional event monitoring and auditing | Monitoramento e auditoria profissional |
+| **Message Broker** | Asynchronous event-driven communication (RabbitMQ) | Comunicação assíncrona por eventos (RabbitMQ) |
+| **Distributed Cache** | Low-latency retrieval and session management (Redis) | Recuperação de dados de alta performance (Redis) |
+| **Arbitrary Conversion Engine** | High-precision international tax & currency system | Sistema de alta precisão para taxas e câmbio |
 | **K8s Cluster Config** | Self-healing and automated scalability setup | Setup de self-healing e escalabilidade automática |
 
 ---
@@ -54,14 +55,14 @@
 ## 🛠️ Tech Stack & Hard Skills
 
 * **Language:** Java (LTS Versions).
-* **Frameworks:** Spring Cloud (Gateway, Service Discovery, Config Server).
+* **Frameworks:** Spring Cloud (Gateway, Discovery, Config Server).
+* **Messaging:** **RabbitMQ / Apache Kafka** (Event-Driven Design).
+* **Performance:** **Redis** (Distributed Caching).
+* **Database:** PostgreSQL + **Flyway** (Database Version Control).
 * **Infrastructure:** Docker (Containerization) & Kubernetes (Orchestration).
-* **Focus:** Memory Management, Flow Control, Domain Abstraction.
-* **Standards:** Design-First Approach, Plug-and-Play Modularity.
-* **Environment:** Tested and audited for security patterns.
+* **Standards:** Design-First Approach, SOLID, Clean Code.
 
 ---
-
 
 ## 👨‍💻 Author & Engineering Mindset | Autoria e Engenharia
 **Kauan Oliveira** - *Systems & Security Engineer*
@@ -79,9 +80,8 @@ Atualmente focado em **Freelance de Alta Performance** e **Pesquisa em Bug Bount
 
 ### 📩 Connect with Me
 - **LinkedIn:** [Kauan Oliveira](https://www.linkedin.com/in/kauan-oliveira-324264378/)
-- **Bug Bounty Portfolio:** [HackerOne/Profile]
 - **Professional Email:** [Seu Email]
 
- ---
+---
 
 *Developed in 2026 by Kauan Oliveira / Feito em 2026 por Kauan Oliveira*
