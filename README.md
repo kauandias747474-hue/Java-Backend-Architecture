@@ -73,7 +73,7 @@ Esta camada define a robustez do sistema contra falhas externas e ataques malici
 ### 🚦 Infrastructure Security
 * **PT:** Defesa ativa via **Rate Limiting** (proteção contra DoS) e **Security Interceptors** para sanitização de inputs (Prevenção de SQL Injection e XSS).
 
----
+
 
 ---
 
