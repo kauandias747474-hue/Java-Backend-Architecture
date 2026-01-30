@@ -3,21 +3,21 @@
 ## 🇧🇷 Português
 
 ### 📌 Objetivo
-Esta camada é responsável por proteger a integridade e a confidencialidade dos dados que entram e saem do sistema. Ela serve como a blindagem técnica contra ataques comuns e vazamento de informações sensíveis.
+Esta camada é a primeira linha de defesa da aplicação. Ela não lida com regras de negócio, mas sim com a proteção da infraestrutura contra ataques externos, abusos de API e corrupção de dados.
 
-### 🚀 Componentes Adicionados
-* **`sanitization/`**: Responsável por limpar inputs do usuário (XSS, SQL Injection) antes que cheguem aos motores.
-* **`encryption/`**: Implementa a criptografia de campos sensíveis (Field-Level Encryption) para proteger dados no banco de dados.
-* **`audit/`**: (Já existente) Garante a imutabilidade dos registros de transação via hashing.
+### 🚀 Componentes de Defesa Ativa
+* **`RateLimiter.java`**: Controla a vazão de requisições por usuário ou IP. Utiliza algoritmos de controle de tráfego para prevenir ataques de negação de serviço (DoS) e proteger os recursos do Home Server.
+* **`SecurityInterceptor.java`**: Atua como um "vigilante" no pipeline de entrada. Ele intercepta todas as chamadas para validar tokens, higienizar inputs e injetar contextos de segurança antes que a requisição chegue aos motores principais.
+* **`audit/`**: (Cadeia Imutável) Garante que qualquer dado escrito seja vinculado criptograficamente ao registro anterior, impedindo alterações retroativas no banco de dados.
 
 ---
 
 ## 🇺🇸 English
 
 ### 📌 Purpose
-This layer is responsible for protecting the integrity and confidentiality of data entering and leaving the system. It acts as the technical shield against common attacks and sensitive data leaks.
+This layer is the application's first line of defense. It focuses on infrastructure protection against external attacks, API abuse, and data corruption, rather than business logic.
 
-### 🚀 Added Components
-* **`sanitization/`**: Cleans user inputs (XSS, SQL Injection) before they reach the engines.
-* **`encryption/`**: Implements Field-Level Encryption to protect sensitive data within the database.
-* **`audit/`**: (Existing) Ensures transaction record immutability via hashing.
+### 🚀 Active Defense Components
+* **`RateLimiter.java`**: Controls request throughput per user or IP. It implements traffic control algorithms to prevent Denial of Service (DoS) attacks and protect Home Server resources.
+* **`SecurityInterceptor.java`**: Acts as a "sentinel" in the input pipeline. It intercepts all calls to validate tokens, sanitize inputs, and inject security contexts before the request reaches the core engines.
+* **`audit/`**: (Immutable Chain) Ensures that every written record is cryptographically linked to the previous one, preventing retroactive database tampering.
