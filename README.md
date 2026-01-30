@@ -38,41 +38,34 @@
 - **PT:** Orquestração de microsserviços utilizando Docker e Kubernetes para alta disponibilidade.
 
 ---
+## 🏗️ Core Engineering Engines & Architecture
 
-## ⚙️ Core Engineering Engines | Motores de Engenharia
+O projeto utiliza uma arquitetura modular em `org.engine`, separando responsabilidades para garantir fácil manutenção e auditoria.
 
-Este projeto conta com motores internos especializados para lidar com lógica de missão crítica:
+### ⚙️ Core Engines (`/core`)
+* **Finance Engine:** Núcleo de cálculo monetário de alta precisão utilizando `BigDecimal`. Implementado para evitar erros de arredondamento em transações complexas.
+* **Task Processor:** Unidade de execução assíncrona para processamento pesado de dados (Heavy Data Processing), garantindo que a aplicação permaneça responsiva.
+* **Task Scheduler:** Orquestrador temporal para agendamentos inteligentes e rotinas de manutenção automática.
 
-* **Finance Engine:** Núcleo de cálculo monetário de alta precisão (`BigDecimal`).
-* **Task Processor:** Unidade de execução assíncrona para processamento pesado de dados.
-* **Task Scheduler:** Orquestrador temporal para agendamentos e rotinas de manutenção.
+### 🏛️ Domain & Rules (`/domain`, `/rules`, `/strategy`)
+* **Monetary Value (Domain):** Value Objects ricos para representação de moeda, prevenindo estados inválidos no domínio.
+* **International Tax (Rules):** Centralização de regras fiscais internacionais, facilitando a expansão global do sistema.
+* **Tax Strategy (Strategy):** Aplicação de Design Patterns para alternância dinâmica de algoritmos de cálculo de impostos em tempo de execução.
+
+### 🔌 Infrastructure (`/infrastructure`)
+* **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail) e conformidade com normas de segurança.
 
 ---
 
 ## 🐳 Infrastructure & Deployment (DevOps)
 
-**EN:** Full Dockerized environment for dev/prod parity.
-**PT:** Ambiente Dockerizado completo para paridade entre desenvolvimento e produção.
+Ambiente totalmente Dockerizado para garantir paridade entre desenvolvimento e produção.
 
-* **Database:** PostgreSQL 15.
-* **Caching:** Redis 7.
-* **Messaging:** RabbitMQ.
-
-
-
-## 📂 Project Roadmap | Roteiro de Projetos
-
-| Project / Component | Technical Goal (EN) | Objetivo Técnico (PT) | Status 
-| :--- | :--- | :--- | :---
-| **Finance Engine** | High-precision tax & currency system | Sistema de alta precisão para taxas e câmbio |
-| **Infrastructure** | Docker-compose for DB, Cache & Broker | Docker-compose para DB, Cache e Broker | 
-| **Task Orchestration** | Background processing & scheduled jobs | Processamento background e tarefas agendadas| 
-| **API Edge Gateway** | Centralized routing and security | Roteamento centralizado e segurança | 
-| **Audit Log System** | Event monitoring and auditing | Monitoramento e auditoria profissional | 
-| **K8s Cluster Config** | Self-healing and automated scalability | Setup de self-healing e auto-escalabilidade | 
+* **Database:** PostgreSQL 15 (Relacional)
+* **Caching:** Redis 7 (Alta performance)
+* **Messaging:** RabbitMQ (Mensageria assíncrona para o Task Processor)
 
 ---
-
 ## 🛠️ Tech Stack & Hard Skills | Tecnologias e Habilidades
 
 * **Language / Linguagem:** Java (LTS Versions).
