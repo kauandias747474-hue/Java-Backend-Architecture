@@ -1,23 +1,38 @@
-# ⚖️ High-Precision Validation Engine | Motor de Validação de Alta Precisão
+# ⚖️ Validation Pipeline Architecture | Arquitetura do Pipeline de Validação
 
-## 🇺🇸 English
-### 📌 Purpose
-This module acts as the system's "Gatekeeper". It ensures that no corrupt, malicious, or logically inconsistent data reaches the calculation engines. It is designed for high-throughput financial operations where precision is non-negotiable.
+## 🏗️ Structure & Responsibility | Estrutura e Responsabilidades
 
-### 🚀 Key Features
-* **Structural Integrity:** Ensures the data follows the exact schema required to avoid parsing errors.
-* **Financial Business Rules:** Validates monetary logic (e.g., negative values, scale precision, currency consistency).
-* **Fail-Fast Mechanism:** Stops processing immediately upon detecting an anomaly to save resources and prevent data corruption.
-* **Virtual Thread Scaling:** Optimized to validate massive batches of transactions concurrently.
+Para evitar códigos gigantes e bagunçados, este módulo é dividido em camadas de responsabilidade única:
+
+### 1. `HighPerformanceValidator.java` (The Orchestrator)
+* **EN:** The entry point. It uses **Java Virtual Threads** to run multiple validations in parallel. It orchestrates the flow between the schema, rules, and constraints.
+* **PT:** O ponto de entrada. Usa **Virtual Threads** para rodar múltiplas validações em paralelo. Orquestra o fluxo entre o schema, as regras e as restrições.
+
+### 2. `SchemaIntegrity.java` (Level 1: Structural)
+* **EN:** Checks if the data structure is complete (Null checks, required fields, data types).
+* **PT:** Verifica se a estrutura de dados está completa (Checks de nulo, campos obrigatórios, tipos de dados).
+
+### 3. `RulesValidator.java` (Level 2: Business Logic)
+* **EN:** Validates the financial logic (Non-negative amounts, correct currency codes, scale precision).
+* **PT:** Valida a lógica financeira (Valores não negativos, códigos de moeda corretos, precisão decimal).
+
+### 4. `ConstraintValidator.java` (Level 3: Hard Limits)
+* **EN:** Validates technical and security limits (Maximum transaction value, protection against overflow).
+* **PT:** Valida limites técnicos e de segurança (Valor máximo de transação, proteção contra overflow).
+
+### 5. `TransactionValidator.java` (The Legacy/Bridge)
+* **EN:** Acts as the main validator interface for simple or legacy transaction flows.
+* **PT:** Atua como a interface principal de validação para fluxos de transação simples ou legados.
 
 ---
 
-## 🇧🇷 Português
-### 📌 Objetivo
-Este módulo atua como o "Guardião" do sistema. Ele garante que nenhum dado corrompido, malicioso ou logicamente inconsistente chegue aos motores de cálculo. Projetado para operações financeiras de alta vazão onde a precisão é inegociável.
+## 🛠️ Validation Flow | Fluxo de Validação
 
-### 🚀 Funcionalidades Principais
-* **Integridade Estrutural:** Garante que os dados sigam o esquema exato exigido para evitar erros de processamento.
-* **Regras de Negócio Financeiras:** Valida a lógica monetária (ex: valores negativos, precisão decimal, consistência de moeda).
-* **Mecanismo Fail-Fast:** Interrompe o processamento imediatamente ao detectar uma anomalia para poupar recursos e evitar corrupção de dados.
-* **Escala com Virtual Threads:** Otimizado para validar lotes massivos de transações simultaneamente.
+
+
+1.  **Request** enters `HighPerformanceValidator`.
+2.  **Virtual Thread** is spawned for each transaction.
+3.  `SchemaIntegrity` blocks malformed data (**Fail-Fast**).
+4.  `RulesValidator` ensures the money logic is sound.
+5.  `ConstraintValidator` applies security and hardware limits.
+6.  **Data** is cleared for processing in the `FinanceEngine`.
