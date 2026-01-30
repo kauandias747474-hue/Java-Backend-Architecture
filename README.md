@@ -55,6 +55,25 @@ O projeto utiliza uma arquitetura modular em `org.engine`, separando responsabil
 ### 🔌 Infrastructure (`/infrastructure`)
 * **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail) e conformidade com normas de segurança.
 
+---
+
+## 🛡️ Resilience & Security Ecosystem | Ecossistema de Resiliência
+
+Esta camada define a robustez do sistema contra falhas externas e ataques maliciosos.
+
+### 🌐 Context Management (Passaporte da Requisição)
+* **PT:** Gerencia o **Distributed Tracing** via `Correlation ID`. Cada ação é vinculada a uma identidade única, permitindo rastreabilidade total em logs distribuídos.
+
+### ⚡ Resilience & Self-Healing
+* **PT:** Proteção contra falhas em cascata através de **Circuit Breakers** (isolamento de serviços instáveis) e **Retry Manager** com *Exponential Backoff*.
+
+### ⛓️ Immutable Audit Chain
+* **PT:** Trilha de auditoria criptográfica onde cada log de transação é vinculado ao anterior via **SHA-256**, criando uma cadeia de custódia imutável (Anti-Tampering).
+
+### 🚦 Infrastructure Security
+* **PT:** Defesa ativa via **Rate Limiting** (proteção contra DoS) e **Security Interceptors** para sanitização de inputs (Prevenção de SQL Injection e XSS).
+
+---
 
 ---
 
