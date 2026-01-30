@@ -56,23 +56,23 @@ O projeto utiliza uma arquitetura modular em `org.engine`, separando responsabil
 * **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail) e conformidade com normas de segurança.
 
 ---
+## 🛡️ Resilience & Security Ecosystem | Ecossistema de Resiliência e Segurança
 
-## 🛡️ Resilience & Security Ecosystem | Ecossistema de Resiliência
+### 🌐 Context Management | Gerenciamento de Contexto
+* **PT:** Gerencia o **Rastreamento Distribuído** via `Correlation ID`. Cada ação é vinculada a uma identidade única em logs distribuídos.
+* **EN:** Manages **Distributed Tracing** via `Correlation ID`. Every action is linked to a unique identity across distributed logs.
 
-Esta camada define a robustez do sistema contra falhas externas e ataques maliciosos.
+### ⚡ Resilience & Self-Healing | Resiliência e Auto-Cura
+* **PT:** Proteção contra falhas em cascata via **Circuit Breakers** e **Retry Manager** com *Exponential Backoff*.
+* **EN:** Protection against cascading failures via **Circuit Breakers** and **Retry Manager** with *Exponential Backoff*.
 
-### 🌐 Context Management (Passaporte da Requisição)
-* **PT:** Gerencia o **Distributed Tracing** via `Correlation ID`. Cada ação é vinculada a uma identidade única, permitindo rastreabilidade total em logs distribuídos.
+### ⛓️ Immutable Audit Chain | Cadeia de Auditoria Imutável
+* **PT:** Trilha de auditoria criptográfica onde cada log é vinculado ao anterior via **SHA-256** (Anti-Tampering).
+* **EN:** Cryptographic audit trail where each log is linked to the previous one via **SHA-256** (Anti-Tampering).
 
-### ⚡ Resilience & Self-Healing
-* **PT:** Proteção contra falhas em cascata através de **Circuit Breakers** (isolamento de serviços instáveis) e **Retry Manager** com *Exponential Backoff*.
-
-### ⛓️ Immutable Audit Chain
-* **PT:** Trilha de auditoria criptográfica onde cada log de transação é vinculado ao anterior via **SHA-256**, criando uma cadeia de custódia imutável (Anti-Tampering).
-
-### 🚦 Infrastructure Security
-* **PT:** Defesa ativa via **Rate Limiting** (proteção contra DoS) e **Security Interceptors** para sanitização de inputs (Prevenção de SQL Injection e XSS).
-
+### 🚦 Infrastructure Security | Segurança de Infraestrutura
+* **PT:** Defesa ativa via **Rate Limiting** (anti-DoS) e **Interceptors** para sanitização de inputs (SQLi/XSS).
+* **EN:** Active defense via **Rate Limiting** (anti-DoS) and **Interceptors** for input sanitization (SQLi/XSS).
 
 
 ---
