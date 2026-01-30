@@ -55,7 +55,32 @@ O projeto utiliza uma arquitetura modular em `org.engine`, separando responsabil
 ### 🔌 Infrastructure (`/infrastructure`)
 * **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail) e conformidade com normas de segurança.
 
+
 ---
+
+## 📂 Project Roadmap | Roteiro de Projetos
+
+| Project / Component | Technical Goal (Objetivo Técnico) |
+| :--- | :--- |
+| **Finance Engine** | High-precision tax & currency system (Precisão Absoluta) |
+| **Infrastructure** | Docker-compose for DB, Cache & Broker |
+| **Task Orchestration** | Background processing & scheduled jobs |
+| **Security Layer** | Rate Limiting & Input Sanitization |
+| **API Edge Gateway** | Centralized routing and security |
+| **K8s Cluster Config** | Self-healing and automated scalability |
+
+---
+
+## 💡 Engineering Best Practices (Evitando Erros)
+
+Para garantir a integridade financeira, este projeto segue regras rígidas de desenvolvimento:
+
+> **Anti-Error Pattern:** Nunca utilizamos `new BigDecimal(double)`. 
+> **Por que?** O construtor de `double` em Java introduz imprecisões de ponto flutuante. 
+> **Solução:** Todos os cálculos utilizam `new BigDecimal(String)` ou `BigDecimal.valueOf(double)`, garantindo precisão decimal exata.
+
+---
+
 
 ## 🐳 Infrastructure & Deployment (DevOps)
 
