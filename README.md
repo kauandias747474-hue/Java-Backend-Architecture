@@ -37,12 +37,7 @@
 - **EN:** Orchestration of microservices using Docker and Kubernetes for high availability.
 - **PT:** Orquestração de microsserviços utilizando Docker e Kubernetes para alta disponibilidade.
 
-
-## 🛡️ Resilience & Security Ecosystem | Ecossistema de Resiliência e Segurança
-
-### 🌐 Context Management | Gerenciamento de Contexto
-* **PT:** Gerencia o **Rastreamento Distribuído** via `Correlation ID`. Cada ação é vinculada a uma identidade única em logs distribuídos.
-* **EN:** Manages **Dis---
+---
 
 ## 📂 Project Structure & Core Engineering | Organização e Engenharia
 
@@ -52,12 +47,10 @@ O projeto utiliza uma arquitetura modular em `org.engine`, numerada para refleti
 
 * **`01-finance-engine/`**: Núcleo de cálculo monetário de alta precisão utilizando `BigDecimal`. Implementado para evitar erros de arredondamento em transações complexas.
 * **`02-monetary-domain-rules/`**: 
-    * **Monetary Value:** Value Objects ricos para representação de moeda, prevenindo estados inválidos.
-    * **International Tax:** Centralização de regras fiscais internacionais para expansão global.
-    * **Tax Strategy:** Aplicação de Design Patterns para alternância dinâmica de algoritmos de cálculo.
+    * **Monetary Value (Domain):** Value Objects ricos para representação de moeda, prevenindo estados inválidos.
+    * **International Tax (Rules):** Centralização de regras fiscais internacionais para expansão global.
+    * **Tax Strategy (Strategy):** Aplicação de Design Patterns para alternância dinâmica de algoritmos de cálculo.
 * **`03-task-orchestration/`**: Sinergia entre o **Task Scheduler** (Gatilho/Orquestrador temporal) e o **Task Processor** (Unidade de execução assíncrona para processamento pesado).
-
----
 
 ### **II. Infrastructure & Resilience (`/infrastructure`)**
 
@@ -89,19 +82,11 @@ A comunicação entre o **Task Scheduler (03)** e o **Task Processor (03)** oper
 
 ---
 
-## 📂 Project Roadmap | Roteiro de Projetos
+## 🛡️ Resilience & Security Ecosystem | Detalhes de Segurança
 
-| Project / Component | Technical Goal (Objetivo Técnico) |
-| :--- | :--- |
-| **Finance Engine** | High-precision tax & currency system (Precisão Absoluta) |
-| **Infrastructure** | Docker-compose for DB, Cache & Broker |
-| **Task Orchestration** | Background processing & scheduled jobs |
-| **Security Layer** | Rate Limiting & Input Sanitization |
-| **API Edge Gateway** | Centralized routing and security |
-| **K8s Cluster Config** | Self-healing and automated scalability |
-
----
-tributed Tracing** via `Correlation ID`. Every action is linked to a unique identity across distributed logs.
+### 🌐 Context Management | Gerenciamento de Contexto
+* **PT:** Gerencia o **Rastreamento Distribuído** via `Correlation ID`. Cada ação é vinculada a uma identidade única em logs distribuídos.
+* **EN:** Manages **Distributed Tracing** via `Correlation ID`. Every action is linked to a unique identity across distributed logs.
 
 ### ⚡ Resilience & Self-Healing | Resiliência e Auto-Cura
 * **PT:** Proteção contra falhas em cascata via **Circuit Breakers** e **Retry Manager** com *Exponential Backoff*.
@@ -114,7 +99,6 @@ tributed Tracing** via `Correlation ID`. Every action is linked to a unique iden
 ### 🚦 Infrastructure Security | Segurança de Infraestrutura
 * **PT:** Defesa ativa via **Rate Limiting** (anti-DoS) e **Interceptors** para sanitização de inputs (SQLi/XSS).
 * **EN:** Active defense via **Rate Limiting** (anti-DoS) and **Interceptors** for input sanitization (SQLi/XSS).
-
 
 ---
 
@@ -141,7 +125,6 @@ Para garantir a integridade financeira, este projeto segue regras rígidas de de
 
 ---
 
-
 ## 🐳 Infrastructure & Deployment (DevOps)
 
 Ambiente totalmente Dockerizado para garantir paridade entre desenvolvimento e produção.
@@ -151,6 +134,7 @@ Ambiente totalmente Dockerizado para garantir paridade entre desenvolvimento e p
 * **Messaging:** RabbitMQ (Mensageria assíncrona para o Task Processor)
 
 ---
+
 ## 🛠️ Tech Stack & Hard Skills | Tecnologias e Habilidades
 
 * **Language / Linguagem:** Java (LTS Versions).
@@ -172,9 +156,9 @@ Ambiente totalmente Dockerizado para garantir paridade entre desenvolvimento e p
   <img src="https://img.shields.io/badge/Clean-Architecture-red?style=for-the-badge" alt="Clean Arch">
 </p>
 
-**PT-BR:** Modelagem baseada em padrões estruturais para sistemas de missão crítica. Toda a lógica de desacoplamento e gestão de threads foi validada em folhas A4.
+**PT-BR:** Modelagem baseada em padrões estruturais para sistemas de missão crítica. Toda a lógica de desacoplamento e gestão de threads foi validada com rigor técnico para garantir estabilidade.
 
-**EN-US:** Modeling based on structural patterns for mission-critical systems. All decoupling logic and thread management were validated on A4 sheets.
+**EN-US:** Modeling based on structural patterns for mission-critical systems. All decoupling logic and thread management were validated with technical rigor to ensure stability.
 
 ### 🎯 Objective / Objetivo
 **EN:** Focused on High-Performance Freelancing and Bug Bounty Research.
