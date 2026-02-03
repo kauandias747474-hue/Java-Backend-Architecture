@@ -52,6 +52,29 @@ O projeto utiliza uma arquitetura modular em `org.engine`, separando responsabil
 * **International Tax (Rules):** Centralização de regras fiscais internacionais, facilitando a expansão global do sistema.
 * **Tax Strategy (Strategy):** Aplicação de Design Patterns para alternância dinâmica de algoritmos de cálculo de impostos em tempo de execução.
 
+  ---
+
+### 🔄 Integração e Fluxo de Trabalho
+
+Embora o **Task Scheduler** e o **Task Processor** funcionem como unidades independentes, eles foram projetados para operar em sinergia através de um modelo de **comunicação desacoplada**:
+
+1.  **Gatilho (Scheduler):** O agendador monitora o tempo e as condições do sistema. Quando um critério é atingido, ele gera uma instrução de tarefa.
+2.  **Fila de Execução (Task Queue):** As instruções são organizadas em uma fila, permitindo que o sistema priorize o que é mais importante sem sobrecarregar a memória.
+3.  **Processamento (Processor):** O executor retira as tarefas da fila e as processa em segundo plano, devolvendo apenas o resultado final ou o log de conclusão.
+
+
+
+> **Diferencial Técnico:** Esta arquitetura permite que cada módulo seja atualizado ou substituído sem afetar os demais. É uma estrutura pronta para crescer, suportando desde scripts simples até sistemas de automação industrial de grande porte.
+
+---
+
+### 🛠️ Benefícios da Arquitetura Modular
+
+* **Resiliência:** Falhas em processos pesados dentro do `Processor` não interrompem o funcionamento do `Scheduler`.
+* **Manutenibilidade:** Código limpo e dividido, facilitando correções e upgrades pontuais sem efeitos colaterais.
+* **Performance:** O uso de threads assíncronas impede travamentos de interface, proporcionando uma experiência de uso fluida.
+
+
 ### 🔌 Infrastructure (`/infrastructure`)
 * **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail) e conformidade com normas de segurança.
 
