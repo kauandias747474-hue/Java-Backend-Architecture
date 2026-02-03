@@ -37,53 +37,71 @@
 - **EN:** Orchestration of microservices using Docker and Kubernetes for high availability.
 - **PT:** Orquestração de microsserviços utilizando Docker e Kubernetes para alta disponibilidade.
 
+
+## 🛡️ Resilience & Security Ecosystem | Ecossistema de Resiliência e Segurança
+
+### 🌐 Context Management | Gerenciamento de Contexto
+* **PT:** Gerencia o **Rastreamento Distribuído** via `Correlation ID`. Cada ação é vinculada a uma identidade única em logs distribuídos.
+* **EN:** Manages **Dis---
+
+## 📂 Project Structure & Core Engineering | Organização e Engenharia
+
+O projeto utiliza uma arquitetura modular em `org.engine`, numerada para refletir a hierarquia de execução, separando responsabilidades para garantir fácil manutenção, auditoria e alta performance.
+
+### **I. Core Engines & Domain (`/core`, `/domain`)**
+
+* **`01-finance-engine/`**: Núcleo de cálculo monetário de alta precisão utilizando `BigDecimal`. Implementado para evitar erros de arredondamento em transações complexas.
+* **`02-monetary-domain-rules/`**: 
+    * **Monetary Value:** Value Objects ricos para representação de moeda, prevenindo estados inválidos.
+    * **International Tax:** Centralização de regras fiscais internacionais para expansão global.
+    * **Tax Strategy:** Aplicação de Design Patterns para alternância dinâmica de algoritmos de cálculo.
+* **`03-task-orchestration/`**: Sinergia entre o **Task Scheduler** (Gatilho/Orquestrador temporal) e o **Task Processor** (Unidade de execução assíncrona para processamento pesado).
+
 ---
-## 🏗️ Core Engineering Engines & Architecture
 
-O projeto utiliza uma arquitetura modular em `org.engine`, separando responsabilidades para garantir fácil manutenção e auditoria.
+### **II. Infrastructure & Resilience (`/infrastructure`)**
 
-### ⚙️ Core Engines (`/core`)
-* **Finance Engine:** Núcleo de cálculo monetário de alta precisão utilizando `BigDecimal`. Implementado para evitar erros de arredondamento em transações complexas.
-* **Task Processor:** Unidade de execução assíncrona para processamento pesado de dados (Heavy Data Processing), garantindo que a aplicação permaneça responsiva.
-* **Task Scheduler:** Orquestrador temporal para agendamentos inteligentes e rotinas de manutenção automática.
+* **`04-infrastructure-layer/`**: Implementação de persistência (**PostgreSQL 15**), Caching (**Redis 7**) e Mensageria (**RabbitMQ**).
+    * **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail).
+* **`05-resilience-self-healing/`**: Proteção contra falhas em cascata via **Circuit Breakers** e **Retry Manager** com *Exponential Backoff*.
+* **`06-context-security-ecosystem/`**: 
+    * **Context Management:** Rastreamento Distribuído via `Correlation ID`.
+    * **Immutable Audit Chain:** Trilha criptográfica vinculada via **SHA-256** (Anti-Tampering).
+    * **Infrastructure Security:** Defesa ativa via **Rate Limiting** (anti-DoS) e **Interceptors** (SQLi/XSS).
 
-### 🏛️ Domain & Rules (`/domain`, `/rules`, `/strategy`)
-* **Monetary Value (Domain):** Value Objects ricos para representação de moeda, prevenindo estados inválidos no domínio.
-* **International Tax (Rules):** Centralização de regras fiscais internacionais, facilitando a expansão global do sistema.
-* **Tax Strategy (Strategy):** Aplicação de Design Patterns para alternância dinâmica de algoritmos de cálculo de impostos em tempo de execução.
-
-  ---
+---
 
 ### 🔄 Integração e Fluxo de Trabalho
 
-Embora o **Task Scheduler** e o **Task Processor** funcionem como unidades independentes, eles foram projetados para operar em sinergia através de um modelo de **comunicação desacoplada**:
+A comunicação entre o **Task Scheduler (03)** e o **Task Processor (03)** opera de forma desacoplada:
 
-1.  **Gatilho (Scheduler):** O agendador monitora o tempo e as condições do sistema. Quando um critério é atingido, ele gera uma instrução de tarefa.
-2.  **Fila de Execução (Task Queue):** As instruções são organizadas em uma fila, permitindo que o sistema priorize o que é mais importante sem sobrecarregar a memória.
-3.  **Processamento (Processor):** O executor retira as tarefas da fila e as processa em segundo plano, devolvendo apenas o resultado final ou o log de conclusão.
-
-
-
-> **Diferencial Técnico:** Esta arquitetura permite que cada módulo seja atualizado ou substituído sem afetar os demais. É uma estrutura pronta para crescer, suportando desde scripts simples até sistemas de automação industrial de grande porte.
+1.  **Gatilho (Scheduler):** Monitora condições do sistema e gera instruções de tarefa.
+2.  **Fila de Execução (Task Queue):** Organização em fila via **RabbitMQ (04)**, priorizando carga sem sobrecarregar a memória.
+3.  **Processamento (Processor):** Execução em segundo plano, devolvendo apenas o resultado ou o log de conclusão no **Audit Logger (04)**.
 
 ---
 
 ### 🛠️ Benefícios da Arquitetura Modular
 
-* **Resiliência:** Falhas em processos pesados dentro do `Processor` não interrompem o funcionamento do `Scheduler`.
-* **Manutenibilidade:** Código limpo e dividido, facilitando correções e upgrades pontuais sem efeitos colaterais.
-* **Performance:** O uso de threads assíncronas impede travamentos de interface, proporcionando uma experiência de uso fluida.
-
-
-### 🔌 Infrastructure (`/infrastructure`)
-* **Audit Logger:** Sistema de logging persistente para rastreabilidade total (Audit Trail) e conformidade com normas de segurança.
+* **Resiliência:** Falhas em processos pesados (Processor) não interrompem o agendador (Scheduler).
+* **Manutenibilidade:** Código dividido em camadas puras de Java, facilitando upgrades sem efeitos colaterais.
+* **Performance:** O uso de threads assíncronas impede travamentos de interface, garantindo fluidez.
 
 ---
-## 🛡️ Resilience & Security Ecosystem | Ecossistema de Resiliência e Segurança
 
-### 🌐 Context Management | Gerenciamento de Contexto
-* **PT:** Gerencia o **Rastreamento Distribuído** via `Correlation ID`. Cada ação é vinculada a uma identidade única em logs distribuídos.
-* **EN:** Manages **Distributed Tracing** via `Correlation ID`. Every action is linked to a unique identity across distributed logs.
+## 📂 Project Roadmap | Roteiro de Projetos
+
+| Project / Component | Technical Goal (Objetivo Técnico) |
+| :--- | :--- |
+| **Finance Engine** | High-precision tax & currency system (Precisão Absoluta) |
+| **Infrastructure** | Docker-compose for DB, Cache & Broker |
+| **Task Orchestration** | Background processing & scheduled jobs |
+| **Security Layer** | Rate Limiting & Input Sanitization |
+| **API Edge Gateway** | Centralized routing and security |
+| **K8s Cluster Config** | Self-healing and automated scalability |
+
+---
+tributed Tracing** via `Correlation ID`. Every action is linked to a unique identity across distributed logs.
 
 ### ⚡ Resilience & Self-Healing | Resiliência e Auto-Cura
 * **PT:** Proteção contra falhas em cascata via **Circuit Breakers** e **Retry Manager** com *Exponential Backoff*.
