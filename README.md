@@ -11,7 +11,7 @@
 
 ### 🌐 Enterprise Solutions & Engineering
 <p align="left">
-  <img src="https://img.shields.io/badge/Languages-🇺🇸%20EN%20|%20🇩🇪%20DE%20|%20🇪🇸%20ES-white?style=flat-square" alt="Languages">
+  <img src="https://img.shields.io/badge/Languages-🇺🇸%20EN%20|%20🇵🇹%20PT-white?style=flat-square" alt="Languages">
 </p>
 
 **EN:** This technical ecosystem is dedicated to developing high-performance Java backend solutions. The focus is on the transition between **abstract logical modeling** and **robust system implementation**, prioritizing algorithmic efficiency, modularity, and cryptographic integrity for the global market.
@@ -22,109 +22,94 @@
 
 ## 🏗️ Core Engineering Pillars | Pilares de Engenharia
 
-### 🧠 Algorithmic Complexity ($O(n)$)
+### 🧠 Algorithmic Complexity | Complexidade Algorítmica ($O(n)$)
 - **EN:** Mathematical validation of every solution before implementation to ensure scalability.
 - **PT:** Validação matemática de cada solução antes da implementação para garantir escalabilidade.
 
-### 💼 Message-Driven Architecture
+### 💼 Message-Driven Architecture | Arquitetura Orientada a Mensagens
 - **EN:** Implementation of asynchronous communication with **RabbitMQ** for high resilience.
 - **PT:** Implementação de comunicação assíncrona com **RabbitMQ** para alta resiliência.
 
-### 🧱 Robust Object Design & Cache
+### 🧱 Robust Object Design & Cache | Design de Objetos e Cache
 - **EN:** Application of **SOLID**, **Clean Code**, and **Redis** for low-latency performance.
 - **PT:** Aplicação de **SOLID**, **Clean Code** e **Redis** para performance de baixa latência.
 
-### ☁️ Distributed Infrastructure
+### ☁️ Distributed Infrastructure | Infraestrutura Distribuída
 - **EN:** Orchestration of microservices using Docker for high availability and portability.
 - **PT:** Orquestração de microsserviços utilizando Docker para alta disponibilidade e portabilidade.
 
 ---
 
-## 📂 Project Structure & Component Index | Organização e Engenharia
-
-O projeto utiliza uma arquitetura modular em `org.engine`, organizada para refletir a separação estrita de responsabilidades.
+## 📂 Project Structure | Estrutura do Projeto
 
 ### **I. Core Engines & Domain (`/core`, `/domain`)**
-* **`domain/`**: Regras puras e imutáveis.
-    * `MonetaryValue.java`: Value Object para precisão absoluta com `BigDecimal`.
-    * `TransactionRecord.java`: DTO imutável para integridade financeira.
-    * `Events/`: Sistema de eventos para desacoplamento de motores.
-* **`core/`**: Motores de execução e resiliência.
-    * `IdempotencyEngine.java`: Prevenção de duplicidade em transações.
-    * `FlowController.java` & `Throttling`: Gestor de vazão e limites de carga.
-    * `EngineTelemetry.java`: Monitoramento de performance em tempo real.
-    * `Resilience/`: `CircuitBreaker.java` e `RetryManager.java` para auto-cura do sistema.
-    * `Context/`: Gestão de rastreabilidade via `CorrelationIdContext.java`.
+* **`domain/`**: 
+    * **PT:** Regras puras e imutáveis. `MonetaryValue.java` para precisão financeira e `Events/` para desacoplamento.
+    * **EN:** Pure and immutable rules. `MonetaryValue.java` for financial precision and `Events/` for decoupling.
+* **`core/`**: 
+    * **PT:** Motores de execução. `IdempotencyEngine.java` contra duplicidade e `Resilience/` com Circuit Breakers.
+    * **EN:** Execution engines. `IdempotencyEngine.java` against duplication and `Resilience/` with Circuit Breakers.
 
 ### **II. Infrastructure & Active Security (`/infrastructure`)**
-* **`security/`**: Proteção ativa e auditoria.
-    * `AuditLogger.java`: Registro persistente de trilhas de auditoria.
-    * `encryption/`: `DataProtector.java` para criptografia AES-256 de dados sensíveis.
-    * `sanitization/`: `InputCleaner.java` para proteção contra XSS e Injeções.
-* **`docker/`**: Infraestrutura como código para padronização de ambientes.
-* **`services/`**: Ecossistema de microsserviços distribuídos.
-    * `api-gateway`, `audit-service`, `cache-service` (Redis), `message-broker` (RabbitMQ), `discovery-server`.
+* **`security/`**: 
+    * **PT:** Proteção ativa via `DataProtector.java` (AES-256) e `InputCleaner.java` (Sanitização).
+    * **EN:** Active protection via `DataProtector.java` (AES-256) and `InputCleaner.java` (Sanitization).
+* **`docker/`**: 
+    * **PT:** Infraestrutura como código para padronização de ambientes.
+    * **EN:** Infrastructure as code for environment standardization.
+* **`services/`**: 
+    * **PT:** Microsserviços: API Gateway, Discovery Server, Message Broker (RabbitMQ) e Redis.
+    * **EN:** Microservices: API Gateway, Discovery Server, Message Broker (RabbitMQ), and Redis.
 
 ### **III. Immutable Audit Chain (`/security/audit/chain`) ⛓️**
-* **`cryptographic-audit/`**:
-    * `TransactionHasher.java`: Motor SHA-256 para digitais matemáticas.
-    * `AuditChainManager.java`: Orquestrador de custódia imutável dos logs.
-    * `IntegrityChecker.java`: Fiscal de integridade contra violações (Anti-Tampering).
-
-### **IV. Strategy & Rules (`/rules`, `/strategy`)**
-* **`TaxStrategy.java`**: Padrão Strategy para cálculos fiscais internacionais.
-* **`InternationalTax.java`**: Implementação de políticas fiscais globais.
+* **PT:** `AuditChainManager.java` orquestra uma trilha de auditoria onde cada elo é vinculado ao anterior via **SHA-256**.
+* **EN:** `AuditChainManager.java` orchestrates an audit trail where each link is tied to the previous one via **SHA-256**.
 
 ---
 
-## 🛡️ Resilience & Security Ecosystem | Detalhes de Segurança
+## 🛡️ Resilience & Security Ecosystem | Resiliência e Segurança
 
-### ⚡ Resilience & Self-Healing | Resiliência e Auto-Cura
+### ⚡ Self-Healing | Auto-Cura
 
-Proteção contra falhas em cascata via **Circuit Breakers** e **Retry Manager** com *Exponential Backoff*.
+* **PT:** Proteção contra falhas em cascata via **Circuit Breaker** e **Retry Manager**.
+* **EN:** Cascading failure protection via **Circuit Breaker** and **Retry Manager**.
 
-### ⛓️ Immutable Audit Chain | Cadeia de Auditoria Imutável
-Trilha de auditoria criptográfica onde cada log é vinculado ao anterior via **SHA-256**. Torna impossível alterar o histórico sem quebrar a integridade da corrente.
+### ⛓️ Immutable Audit | Auditoria Imutável
+* **PT:** Torna impossível alterar o histórico de logs sem quebrar a integridade criptográfica da corrente.
+* **EN:** Makes it impossible to alter log history without breaking the chain's cryptographic integrity.
 
-### 🚦 Infrastructure Security | Segurança de Infraestrutura
-Defesa ativa via **Rate Limiting** (anti-DoS), **Sanitização** de inputs e **Criptografia** de dados em repouso.
-
----
-
-## ⚙️ Fluxo de Trabalho e Integração
-
-1.  **Ingress:** O `SecurityInterceptor` valida a entrada enquanto o `Throttling` protege a infraestrutura.
-2.  **Contexto:** Injeção de `Correlation ID` para rastreabilidade total (Distributed Tracing).
-3.  **Processamento:** O motor executa a lógica protegida por `Idempotency` e `Resilience`.
-4.  **Auditoria:** O `AuditChainManager` gera o elo criptográfico imutável da operação.
+### 🚦 Traffic Control | Controle de Tráfego
+* **PT:** Defesa ativa via **Throttling** e **Rate Limiting** para proteger a disponibilidade do servidor.
+* **EN:** Active defense via **Throttling** and **Rate Limiting** to protect server availability.
 
 ---
 
-## 💡 Engineering Best Practices (Evitando Erros)
+## 💡 Engineering Best Practices (Anti-Error)
 
-> **Anti-Error Pattern:** Nunca utilizamos `new BigDecimal(double)`.
-> **Solução:** Todos os cálculos utilizam `new BigDecimal(String)` ou `BigDecimal.valueOf(double)`, garantindo precisão decimal exata e evitando bugs financeiros.
+> **PT:** Nunca utilizamos `new BigDecimal(double)`. Usamos `new BigDecimal(String)` para garantir precisão exata.
+>
+> **EN:** We never use `new BigDecimal(double)`. We use `new BigDecimal(String)` to ensure exact decimal precision.
 
 ---
 
 ## 🛠️ Tech Stack | Tecnologias
 * **Language:** Java 21 (Virtual Threads).
 * **Messaging:** RabbitMQ.
-* **Performance:** Redis (Caching).
-* **Database:** PostgreSQL 15.
-* **Infrastructure:** Docker & Docker-Compose.
+* **Cache:** Redis.
+* **DB:** PostgreSQL 15.
+* **Infra:** Docker & Docker-Compose.
 
 ---
 
-## 👨‍💻 Author | Engenharia
+## 👨‍💻 Author | Autoria
 **Kauan Oliveira** - *Systems & Security Engineer*
 
-**PT-BR:** Focado em Freelance de Alta Performance e Arquiteturas Robustas.
+**PT-BR:** Focado em Freelance de Alta Performance e Arquiteturas Robustas.  
 **EN-US:** Focused on High-Performance Freelancing and Robust Architectures.
 
-### 📩 Contato
+### 📩 Contact / Contato
 - **LinkedIn:** [Kauan Oliveira](https://www.linkedin.com/in/kauan-oliveira-324264378/)
 - **GitHub:** [kauandias747474-hue](https://github.com/kauandias747474-hue)
 
 ---
-*Feito em 2026 por Kauan Oliveira*
+*Developed in 2026 / Desenvolvido em 2026*
