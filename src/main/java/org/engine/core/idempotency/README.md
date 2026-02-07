@@ -1,23 +1,35 @@
-# 🛡️ Idempotency Engine
+## 📂 Estrutura do Módulo
 
-Este módulo é responsável por garantir a **Idempotência** de todas as operações críticas do ecossistema. Ele assegura que realizar a mesma operação múltiplas vezes terá o mesmo efeito que realizá-la uma única vez, prevenindo duplicidade de dados e inconsistências em sistemas de larga escala.
+O projeto está organizado dentro da pasta raiz de infraestrutura, separando a lógica de controle de duplicidade dos demais serviços:
 
-## 📝 O que é Idempotência?
+* **`/idempotency`**: Pasta principal do motor de idempotência.
+    * `IdempotencyEngine.java`: Classe principal contendo a lógica de cache LRU e controle de estados.
+    * `Registro`: Subclasse interna que gerencia o DNA das transações (valor, status e tempo).
 
-Em termos práticos: se o `FinanceEngine` processar um pagamento e a conexão cair antes de receber a confirmação, o sistema poderá tentar novamente com segurança. O `IdempotencyEngine` reconhece que aquela transação já foi iniciada e evita erros catastróficos, como cobranças duplicadas ou criação de registros repetidos no banco de dados.
+---
 
-## 🚀 Funcionalidades
+## 🛡️ Módulo: Idempotency Engine
 
-* **Deduplicação de Requisições**: Filtra chamadas repetidas baseadas em uma `Idempotency-Key` única.
-* **Controle de Estado**: Monitora se uma tarefa está em andamento, concluída ou falhou, evitando condições de corrida (*race conditions*).
-* **Consistência de Dados**: Garante que, mesmo em caso de retentativas (*retries*) após falhas de rede, o estado final do sistema permaneça íntegro.
+O `IdempotencyEngine` funciona como um **Interceptor de Estado**. Ele reside entre a entrada da requisição e a lógica de negócio, garantindo que operações críticas não sejam re-executadas indevidamente.
 
-## 🛠️ Aplicação em Projetos Freelance
+### ⚙️ Funcionamento e Lógica de Negócio
+O motor utiliza um **Cache LRU (Least Recently Used)** sincronizado para gerenciar as requisições em memória com alta performance.
 
-Em sistemas financeiros ou CRMs personalizados, a idempotência é um requisito não-funcional crítico. Ela protege a integridade do `MonetaryValue` e garante que webhooks de terceiros (como Stripe, Juno ou Gateways bancários) não causem efeitos colaterais caso sejam disparados mais de uma vez.
 
-## 🏗️ Princípios de Design
 
-1.  **Baixa Latência**: Camada de verificação ultra-rápida que precede a lógica de negócio.
-2.  **Atomicidade**: O registro da chave e a execução da tarefa são tratados para evitar interferência mútua.
-3.  **Tolerância a Falhas**: Transforma instabilidades de infraestrutura em operações previsíveis e seguras.
+#### Diferenciais da Implementação:
+1.  **Objeto Registro**: Encapsula os metadados da transação, permitindo uma análise profunda além de chaves simples.
+2.  **Thread-Safety**: Proteção nativa contra **Race Conditions** através de `Collections.synchronizedMap`, essencial para ambientes multi-thread.
+3.  **Janela Anti-Golpe**: Bloqueio preventivo automático para tentativas idênticas em janelas menores que 30 segundos, mitigando ataques de replay.
+4.  **Resiliência de Falha**: O motor diferencia sucessos de falhas. Se uma transação falhou anteriormente, ele permite a re-tentativa imediata, limpando o rastro de erro para garantir a continuidade do fluxo.
+
+---
+
+## 🛡️ Camadas de Defesa contra Ataques
+
+| Ataque / Problema | Mecanismo de Defesa | Objetivo |
+| :--- | :--- | :--- |
+| **Double Spending** | Chave de Idempotência Única | Impedir cobranças duplicadas em tempo real. |
+| **Ataque de Replay** | Validação de Timestamp | Bloquear repetição de pacotes capturados por terceiros. |
+| **Race Condition** | Sincronismo de Memória | Evitar que requisições paralelas "furem" as validações de saldo. |
+| **Memory Overflow** | Política de Expulsão LRU | Manter a estabilidade do servidor descartando registros antigos sob carga. |
