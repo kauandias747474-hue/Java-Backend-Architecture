@@ -44,10 +44,7 @@ Este módulo fornece uma arquitetura robusta para rastreabilidade do sistema. El
 
 
 
-## 🛠️ How to use / Como usar
-```java
-AuditRepository repo = new AuditRepository();
-repo.salvar(new AuditEntry("Task_Name", Status.SUCESSO));
+
 
 
 
