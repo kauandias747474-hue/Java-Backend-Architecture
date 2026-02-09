@@ -119,5 +119,7 @@ O fluxo de funcionamento segue o princípio de **Responsabilidade Única**:
 * **A Lógica:** Ele cria o `AuditRepository`, cria alguns `AuditEntry` de teste e manda o repositório salvar. Ele serve para provar que a comunicação entre os arquivos está funcionando sem erros.
 
 ---
-**"O AuditRepository poderia ser transformado em uma Interface, permitindo que o sistema escolha entre salvar em banco de dados, arquivo ou nuvem de forma plugável, sem alterar a lógica de criação dos registros ou o ponto de execução principal."*  
+
+*"O AuditRepository poderia ser transformado em uma Interface, permitindo que o sistema escolha entre salvar em banco de dados, arquivo ou nuvem de forma plugável, sem alterar a lógica de criação dos registros ou o ponto de execução principal."*  
+
 ---
