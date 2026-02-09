@@ -46,7 +46,7 @@ The project was refined to achieve **Production Ready** status:
 * **Validated Execution:** Successfully tested system featuring telemetry logs and security hashing.
 
 ### 🚀 Execution Evidence
-```text
+
 🔍 [Session: 7d8f2a1e] DatabaseSeeder: Checking integrity...
 ✅ [Session: 7d8f2a1e] Admin (admin@sistema.com) seeded!
 🔑 Password Hash: hash_admin_de...
