@@ -8,7 +8,7 @@ O `TaxStrategy.java` define um contrato único para o cálculo de impostos. Em v
 
 
 
-[Image of strategy design pattern diagram]
+
 
 
 ## 🚀 Funcionalidades
