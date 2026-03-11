@@ -15,14 +15,8 @@ Para lidar com grandes volumes de dados, o processamento é feito via Parallel S
 Utilizamos Java Records para garantir que os dados sejam imutáveis e seguros entre threads. Aplicamos o conceito de Fail-Fast: o sistema valida os dados (como valores negativos ou nulos) no momento da criação do objeto, impedindo a propagação de erros para camadas de persistência.
 
 **4. A Blindagem (Precisão Bancária)**
-Cálculos financeiros exigem precisão absoluta. O uso de BigDecimal em toda a camada de cálculo evita erros de arredondamento inerentes aos tipos primitivos (double/float), garantindo integridade centavo a centavo.
----
-**🛠️ Tecnologias e Conceitos Aplicados**
-Java Moderno (17+): 
-*Records, Functional Interfaces, Lambdas.*
 
-**Performance:**
-*Parallel Streams e Concurrent API.*
+Cálculos financeiros exigem precisão absoluta. O uso de BigDecimal em toda a camada de cálculo evita erros de arredondamento inerentes aos tipos primitivos (double/float), garantindo integridade centavo a centavo.
 
 **I/O & I18n:**
 *Java NIO (Files/Paths) e Internacionalização (Locale/NumberFormat).*
