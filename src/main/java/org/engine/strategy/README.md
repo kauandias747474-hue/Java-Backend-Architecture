@@ -1,37 +1,33 @@
-# ♟️ Strategy Pattern - Tax Calculation
+**♟️ Tax Strategy Engine (Showcase Técnico)**
+*Este projeto é um Showcase de Engenharia de Software focado em demonstrar o domínio de padrões de projeto, performance e governança de dados no ecossistema Java moderno. Não se trata de uma aplicação completa, mas de uma prova de conceito (PoC) sobre como construir o "Core" financeiro de um sistema escalável.*
 
-Este módulo utiliza o padrão de projeto **Strategy** para gerenciar a complexidade de cálculos tributários. Através da interface `TaxStrategy.java`, o sistema isola as regras fiscais de diferentes jurisdições, permitindo que o motor financeiro permaneça agnóstico às leis de cada país.
-
-## 📝 O que é o TaxStrategy?
-
-O `TaxStrategy.java` define um contrato único para o cálculo de impostos. Em vez de o sistema ter um código gigante cheio de `if/else` para cada país, ele simplesmente chama a "estratégia" correta para aquele contexto específico.
-
-
-
-
-
-
-## 🚀 Funcionalidades
-
-* **Intercambiabilidade**: Alterne entre regras de impostos (ex: Brasil vs EUA) em tempo de execução sem alterar o núcleo do sistema.
-* **Extensibilidade**: Para suportar um novo país, basta implementar a interface `TaxStrategy` em uma nova classe.
-* **Cálculo Preciso**: Trabalha em conjunto com o `MonetaryValue` para garantir que arredondamentos e conversões de moeda sigam as normas fiscais vigentes.
-
-## 🛠️ Aplicação Prática (Freelance)
-
-Em projetos internacionais, a capacidade de adaptar o software a diferentes leis fiscais é um diferencial crítico. 
-1. **Flexibilidade**: Você pode entregar uma versão para o mercado brasileiro e, com apenas uma nova classe, expandir para o mercado americano.
-2. **Segurança**: Erros em cálculos de impostos são custosos. Isolar essa lógica em estratégias testáveis minimiza riscos financeiros para o cliente.
+**🚀 O que este código demonstra?**
+A lógica do sistema está dividida em quatro pilares fundamentais que garantem que o software seja resiliente e fácil de manter, independente da complexidade das regras de negócio:
 
 ---
+**1. O Contrato (Strategy Pattern)**
+Utilizamos o padrão Strategy para isolar as regras fiscais. O motor de cálculo é totalmente agnóstico: ele apenas executa um contrato. Isso permite adicionar novos impostos (Brasil, EUA, Europa) sem alterar uma única linha de código do motor principal.
 
-## 🏗️ Como a Estrutura é Organizada
+**2. O Motor (Parallel Processing)**
+Para lidar com grandes volumes de dados, o processamento é feito via Parallel Streams. O sistema distribui as tarefas entre os múltiplos núcleos da CPU, garantindo alta performance. Uma simulação de latência (TimeSleep) é aplicada para demonstrar o comportamento multithread em tempo real.
 
-1.  **Interface (`TaxStrategy.java`)**: Define o método padrão (ex: `calculateTax(MonetaryValue amount)`).
-2.  **Estratégias Concretas**: Classes como `InternationalTax` que implementam a interface com regras específicas.
-3.  **Contexto**: O motor de cobrança que recebe uma `TaxStrategy` e executa o cálculo sem precisar saber os detalhes internos da lei fiscal.
+**3. O Porteiro (Fail-Fast & Imutabilidade)**
+Utilizamos Java Records para garantir que os dados sejam imutáveis e seguros entre threads. Aplicamos o conceito de Fail-Fast: o sistema valida os dados (como valores negativos ou nulos) no momento da criação do objeto, impedindo a propagação de erros para camadas de persistência.
 
+**4. A Blindagem (Precisão Bancária)**
+Cálculos financeiros exigem precisão absoluta. O uso de BigDecimal em toda a camada de cálculo evita erros de arredondamento inerentes aos tipos primitivos (double/float), garantindo integridade centavo a centavo.
 ---
+**🛠️ Tecnologias e Conceitos Aplicados**
+Java Moderno (17+): 
+*Records, Functional Interfaces, Lambdas.*
 
-## 🚀 Por que isso é importante?
-Implementar o padrão Strategy demonstra que você domina o princípio **Open/Closed** (SOLID). O seu código está "aberto para extensão, mas fechado para modificação", o que é a marca registrada de um backend profissional e escalável.
+**Performance:**
+*Parallel Streams e Concurrent API.*
+
+**I/O & I18n:**
+*Java NIO (Files/Paths) e Internacionalização (Locale/NumberFormat).*
+
+**Arquitetura:**
+*Princípios SOLID, Strategy Design Pattern e Engenharia Defensiva.*
+
+*Nota de Portfólio: Este repositório serve como demonstração de fundamentos de backend e arquitetura limpa. Ele reflete a mentalidade de "Privacy by Design" (via anonimização de dados) e "Clean Code".*
