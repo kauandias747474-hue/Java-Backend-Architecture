@@ -7,7 +7,7 @@
 
 ---
 
-## 🇧🇷 Tax Strategy Engine (Showcase Técnico)
+##  (PT-BR) Tax Strategy Engine (Showcase Técnico)
 
 Este repositório é um **Showcase de Engenharia de Software** focado em demonstrar o domínio de padrões de projeto, performance e governança de dados no ecossistema Java moderno. 
 
@@ -44,7 +44,7 @@ A lógica do sistema está dividida em quatro pilares fundamentais:
 
 ---
 
-## 🇺🇸 Tax Strategy Engine (Technical Showcase)
+## (EN) Tax Strategy Engine (Technical Showcase)
 
 This repository is a **Software Engineering Showcase** focused on demonstrating mastery of design patterns, performance, and data governance within the modern Java ecosystem.
 
