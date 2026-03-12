@@ -1,67 +1,59 @@
 # 🏗️ Service Layer - Database Seeding & System Orchestration
 
-### 🔍 Como ele funciona?
+> **[EN] Disclaimer:** This repository is a **technical demonstration** (Proof of Concept) designed to showcase architectural patterns, Clean Code, and professional JVM standards.  
+> **[PT-BR] Nota:** Este repositório é uma **demonstração técnica** (Prova de Conceito) destinada a exemplificar padrões de arquitetura, Clean Code e padrões profissionais da JVM.
 
-**1. Funcionamento Isolado (O Protótipo):**
-Em isolamento, o `DatabaseSeeder` é um verificador de integridade. Ele consulta o banco de dados e valida: "Este sistema já foi inicializado?". Caso negativo, ele prepara o terreno, sendo o "botão de inicialização inteligente" que garante que o sistema nunca esteja inacessível por falta de dados básicos.
+---
 
-**2. Funcionamento Integrado (O Orquestrador):**
-Como o **Cérebro da Inicialização**, ele coordena as camadas do sistema:
-* **Consome o Domain:** Para instanciar objetos `User` validados.
-* **Aciona a Infrastructure:** Para criptografar senhas via `PasswordEncoder` e registrar logs de auditoria.
-* **Utiliza o Repository:** Para garantir a persistência atômica das informações.
+## 🔍 How does it work? | Como funciona?
 
 
 
-### ✅ Destaques da Refatoração (Clean Code)
-O projeto foi refinado para atingir o estado de **Production Ready**:
-* **Zero Warnings:** Código limpo, sem variáveis órfãs ou imports redundantes.
-* **Ajuste de Escopo:** Hierarquia de pacotes (`org.engine`) alinhada aos padrões profissionais da JVM.
-* **Execução Validada:** Sistema testado com sucesso, apresentando telemetria e hash de segurança.
+### 1. Isolated Operation | Funcionamento Isolado
+**EN:** In isolation, the `DatabaseSeeder` acts as an integrity checker. It queries the database to see if the system has been initialized. If not, it triggers the "intelligent start," ensuring the system is never inaccessible due to missing core data.  
+**PT-BR:** Em isolamento, o `DatabaseSeeder` atua como um verificador de integridade. Ele consulta o banco para validar se o sistema já foi inicializado. Caso negativo, aciona a "inicialização inteligente", garantindo que o sistema nunca fique inacessível por falta de dados básicos.
 
-### 🎯 Proposta de Valor por Público
+### 2. Integrated Orchestration | Orquestração Integrada
+**EN:** As the **Initialization Brain**, it coordinates multiple layers:  
+* **Domain:** Instantiates validated `User` objects.  
+* **Infrastructure:** Triggers `PasswordEncoder` and audit logs.  
+* **Repository:** Ensures atomic persistence.
 
-#### 💼 Para Clientes (O Valor de Negócio)
-* **Implementação sem Erros:** Garante funcionamento imediato ("Plug and Play").
-* **Conformidade (Compliance):** Auditoria ativa desde a primeira ação administrativa.
+**PT-BR:** Como o **Cérebro da Inicialização**, ele coordena múltiplas camadas:  
+* **Domain:** Instancia objetos `User` validados.  
+* **Infrastructure:** Aciona o `PasswordEncoder` e registros de auditoria.  
+* **Repository:** Garante a persistência atômica das informações.
 
-#### 🎓 Para Acadêmicos (A Teoria de Software)
-* **Separação de Preocupações (SoC):** Coordenação de dependências sem violação das regras de domínio.
-* **Idempotência:** Múltiplas execuções não alteram o estado final após a primeira ocorrência.
+---
 
-#### 👨‍💻 Para Recrutadores (A Expertise Técnica)
-* **Clean Architecture:** Organização escalável via Injeção de Dependência.
-* **Security by Design:** Hashing de senhas e observabilidade integrados ao fluxo principal.
+## ✅ Refactoring & Clean Code | Destaques da Refatoração
 
-# 🏗️ Service Layer - Database Seeding & System Orchestration
+* **Production-Ready Demo:** Zero warnings, optimized imports, and professional package hierarchy (`org.engine`).
+* **Idempotency:** Designed to ensure that multiple executions do not alter the final state after the first run.
+* **Security by Design:** Password hashing and observability (telemetry) integrated into the core flow.
 
-### 🔍 How does it work?
+* **Demonstração Profissional:** Zero warnings, imports otimizados e hierarquia de pacotes profissional (`org.engine`).
+* **Idempotência:** Projetado para garantir que múltiplas execuções não alterem o estado final após a primeira ocorrência.
+* **Security by Design:** Hashing de senhas e observabilidade (telemetria) integrados ao fluxo principal.
 
-**1. Isolated Operation (The Prototype):**
-In isolation, the `DatabaseSeeder` is an integrity checker. It queries the database and asks: "Has this system been initialized?". If not, it prepares the ground as an "intelligent start button" ensuring the system is never inaccessible due to missing core data.
+---
 
-**2. Integrated Operation (The Orchestrator):**
-As the **Initialization Brain**, it coordinates the system layers:
-* **Consumes Domain:** To create valid `User` objects.
-* **Triggers Infrastructure:** To encrypt passwords via `PasswordEncoder` and record audit logs.
-* **Uses Repository:** To permanently and atomically save information.
+## 🎯 Value Proposition | Proposta de Valor
 
-### ✅ Refactoring Highlights (Clean Code)
-The project was refined to achieve **Production Ready** status:
-* **Zero Warnings:** Clean code with no orphaned variables or redundant imports.
-* **Scope Alignment:** Package hierarchy (`org.engine`) aligned with professional JVM standards.
-* **Validated Execution:** Successfully tested system featuring telemetry logs and security hashing.
+| Audience / Público | Value Proposition / Proposta de Valor |
+| :--- | :--- |
+| **💼 Business / Clientes** | **Plug & Play:** Error-free implementation and active compliance from day one. / Implementação sem erros e conformidade ativa desde o primeiro dia. |
+| **🎓 Academics / Acadêmicos** | **SoC & Idempotency:** Separation of Concerns without violating domain rules. / Separação de Preocupações sem violar regras de domínio. |
+| **👨‍💻 Recruiters / Recrutadores** | **Expertise:** Scalable organization via Dependency Injection and Hashing. / Organização escalável via Injeção de Dependência e Hashing. |
 
-### 🎯 Value Proposition by Audience
+---
 
-#### 💼 For Clients (Business Value)
-* **Error-Free Implementation:** "Plug and Play" functionality from day one.
-* **Compliance:** Active audit monitoring from the very first administrative action.
+## 🛠️ Tech Stack & Standards
 
-#### 🎓 For Academics (Software Theory)
-* **Separation of Concerns (SoC):** Coordinates dependencies without violating domain rules.
-* **Idempotency:** Multiple executions do not change the final state after the first run.
+* **Java / Kotlin (JVM)**
+* **Spring Boot / Jakarta EE Patterns**
+* **BCrypt Hashing**
+* **SLF4J Telemetry**
 
-#### 👨‍💻 For Recruiters (Technical Expertise)
-* **Clean Architecture:** Scalable organization using Dependency Injection.
-* **Security by Design:** Password hashing and observability integrated into the main flow.
+---
+**Developed for demonstration purposes.** | **Desenvolvido para fins de demonstração.**
