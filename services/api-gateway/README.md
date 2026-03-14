@@ -31,12 +31,6 @@ O **API Gateway** atua como o *Single Point of Entry* do ecossistema, funcionand
 
 ---
 
-### 📘 Fundamentação Teórica | Theoretical Foundation
-
-#### 📚 Influências Literárias | Literary Influences
-1.  **"Building Microservices" (Sam Newman):** Aplicação do padrão **Edge Enclosure**. Preocupações transversais não poluem a lógica de negócio. / *Cross-cutting concerns do not pollute business logic.*
-2.  **"Clean Architecture" (Uncle Bob):** Mantém o **Core** (motores de cálculo) independente de detalhes de entrega (HTTP/JSON). / *Keeps the Core independent of delivery details.*
-3.  **"Release It!" (Michael Nygard):** Implementação de **Bulkheads** (anteparos) para evitar o efeito cascata. / *Implementation of bulkheads to prevent cascading failures.*
 
 #### ☕ Conceitos Java Aplicados | Java Concepts Applied
 * **Project Reactor:** Uso de `Mono<Void>` e `Flux` para processamento não-bloqueante (Non-blocking I/O).
