@@ -87,3 +87,33 @@ A implementação deste API Gateway não é apenas uma escolha tecnológica, mas
 
 * **Reactive Programming:** Using `Mono` and `Flux` for non-blocking I/O, allowing high throughput with low resource footprint.
 * **Fail-Fast Filters:** Execution order ensures **Security Filters** run before **Routing**, protecting internal resources immediately.
+
+
+## 🛠️ Roadmap de Desenvolvimento (Proof of Concept)
+
+Para validar os pilares de **Segurança e Roteamento**, este projeto foca na implementação de três componentes críticos:
+
+### 1. Global Traceability Filter
+> **Conceito:** *Distributed Tracing*
+Implementação de um filtro de alta precedência que injeta um `X-Correlation-ID` em todas as requisições. Isso permite que ferramentas de log (como ELK Stack ou Splunk) agrupem logs de múltiplos microserviços sob um único identificador de transação.
+
+### 2. Intelligent Guard (Sanitization Layer)
+> **Conceito:** *Attack Surface Reduction*
+Um filtro customizado que analisa o `POST Body` em busca de assinaturas de ataques (SQLi/XSS). Ele atua como um Web Application Firewall (WAF) minimalista, protegendo o **Motor de Cálculo** de processar dados corrompidos ou maliciosos.
+
+### 3. Service Discovery Routing
+> **Conceito:** *Location Transparency*
+Configuração de rotas dinâmicas utilizando `lb://` (Load Balancer). O Gateway não conhece o endereço IP dos motores de cálculo; ele interage com o Service Registry para rotear o tráfego de forma resiliente, permitindo o escalonamento horizontal (Auto-scaling) sem downtime.
+
+---
+
+## 🇺🇸 Development Roadmap
+
+### 1. Global Traceability Filter
+Implements a high-precedence filter injecting an `X-Correlation-ID`. It enables distributed tracing, allowing log aggregation across the entire microservices ecosystem.
+
+### 2. Intelligent Guard (Sanitization Layer)
+A custom filter that scans the `POST Body` for attack signatures (SQLi/XSS), acting as a minimalist WAF to shield the **Calculation Engine**.
+
+### 3. Service Discovery Routing
+Enables location transparency using `lb://` protocols, allowing the Gateway to route traffic dynamically to scaled calculation instances.
