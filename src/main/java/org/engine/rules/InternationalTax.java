@@ -8,7 +8,6 @@ import java.util.Objects;
  * * Implementação de um motor de regras fiscais utilizando o Strategy Pattern 
  * para garantir o desacoplamento entre a lógica de negócio e a execução.
  * * @version Java 25 (Implicitly Declared Classes)
- * @see <a href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy Pattern</a>
  */
 
 
